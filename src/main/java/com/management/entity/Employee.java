@@ -48,7 +48,7 @@ public class Employee {
 
 	// One-To-One Mapping with manager class to find manager who added particular
 	// employee
-	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToOne(cascade = CascadeType.DETACH, fetch = FetchType.LAZY)
 	@JoinColumn(name = "by_manager", referencedColumnName = "id", nullable = false)
 	private Manager byManager;
 
