@@ -52,7 +52,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Override
-	public void updateEmployee(EmployeeDto emp) {
+	public EmployeeDto updateEmployee(EmployeeDto emp) {
 		logger.info("Updating employee info with empId: ", emp.getEmpId());
 		Employee employee = employeeDao.findEmployee(emp.getEmpId());
 		employee.setFirstName(emp.getFirstName());
@@ -62,6 +62,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 		employee.setAddress(emp.getAddress());
 
 		employeeDao.saveEmployee(employee);
+		return emp;
 	}
 
 	@Override

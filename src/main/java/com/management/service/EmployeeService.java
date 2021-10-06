@@ -10,7 +10,7 @@ public interface EmployeeService {
 
 	List<EmployeeDto> getAllEmployee();
 
-	void updateEmployee(EmployeeDto emp);
+	EmployeeDto updateEmployee(EmployeeDto emp);
 
 	void deleteEmployee(String empId);
 

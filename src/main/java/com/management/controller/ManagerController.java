@@ -48,9 +48,9 @@ public class ManagerController {
 	}
 
 	@PutMapping(UrlMapping.EMPLOYEE)
-	public ResponseEntity<CustomHttpResponse> updateEmployee(@RequestBody EmployeeDto employeeDto) {
-		employeeService.updateEmployee(employeeDto);
-		return new ResponseMaker().successResponse("Employee updated successfully.", HttpStatus.OK);
+	public ResponseEntity<CustomHttpResponse<EmployeeDto>> updateEmployee(@RequestBody EmployeeDto employeeDto) {
+		EmployeeDto employee = employeeService.updateEmployee(employeeDto);
+		return new ResponseMaker().successResponse(employee, "Employee updated successfully.", HttpStatus.OK);
 	}
 
 	@GetMapping(UrlMapping.EMPLOYEE)
